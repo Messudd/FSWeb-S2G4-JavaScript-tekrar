@@ -13,12 +13,14 @@ var sayilar = [45,856,12.5,63,0.02,154,2,54,78,61.7,654,26,12.5,63,969,152,32,31
 */
 
 //Örneğin çözümü:
-function KareninAlani(kenaruzunlugu){
-	return kenaruzunlugu*kenaruzunlugu;
+
+function KareninAlani(kenarUzunlugu){
+	let alan = (kenarUzunlugu**2);
+	return alan;
 }
+console.log(`Karenin Alanı = ${KareninAlani(10)}`);
 
 /* (Oto test yok) Yukarıdaki KareninAlani fonksiyonunu kenar uzunluğu = 10 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
-
 
 
 /* 	GÖREV 1:  
@@ -29,13 +31,14 @@ function KareninAlani(kenaruzunlugu){
 			4. Hesaplanan çemberin çevresi döndürülecektir.
 		*/
 
-function CemberinCevresi(/* kodlar buraya */){
-	/* kodlar buraya */
-}
+function CemberinCevresi(yaricap){
 
+	let cevre = (2*pi*yaricap);
+	return cevre;
+}
+console.log("Çemberin çevresi = ",CemberinCevresi(5));
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
-
 
 
 
@@ -47,10 +50,12 @@ function CemberinCevresi(/* kodlar buraya */){
 			4. Hesaplanan çemberin alanı döndürülecektir.
 		*/
 		
-function CemberinAlani(/* kodlar buraya */){
-	/* kodlar buraya */
-}
+function CemberinAlani(cemberYaricap,pi_sayisi){
 
+	let cemberAlan = (pi_sayisi*(cemberYaricap**2));
+	return cemberAlan;
+}
+console.log(`Çemberin Alanı = ${CemberinAlani(15,pi)}`);
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -77,37 +82,67 @@ function CemberinAlani(/* kodlar buraya */){
 	
 	//3a çözümü
 
-	/* kodlar buraya */
-	
-	
+	var enbuyuk=0;
+
+	for (let i = 0; i<sayilar.length;i++){
+		if(sayilar[i]>enbuyuk){
+			enbuyuk = sayilar[i];
+		}
+	}
+	console.log(`En buyuk : ${enbuyuk}`);
+
+//###########################################
+
+    var enkucuk = Math.min(...sayilar);
+
+	console.log(`En kucuk : ${enkucuk}`);
+
 	
 	// 3b çözümü:
 
-	/* kodlar buraya */
+	var ucetambolunenler = [];
+	sayilar.forEach(function(sayi){
+		if(sayi % 3 === 0){
+			ucetambolunenler.push(sayi);
+		}
+	});
+	console.log(`Üçe bölünen sayılar : ${ucetambolunenler}`);
 		
 		
 		
 	//3c çözümü:
-	
-	/* kodlar buraya */
+
+	let toplam = 0;
+	let k = 0;
+
+	while(k<ucetambolunenler.length)
+	{
+		toplam += ucetambolunenler[k];
+		k++;
+	}
+	ucebolunenlerintoplami = toplam;
+	console.log("3 e bolünenler toplamı = "+ ucebolunenlerintoplami);
 
 	
 	
 	//3d çözümü
 	
-	/* kodlar buraya */
+	var besyuzdenkucuksayilar = sayilar.filter((sayi) => sayi < 500 );
+	console.log(`500 den kucuk sayilar : ${besyuzdenkucuksayilar}`);
 
 
 
 	//3e çözümü
 
-	/* kodlar buraya */
+	var siralisayilar = besyuzdenkucuksayilar.sort(function(x,y){
+		return (x-y);
+	});
+	console.log(`Sıralı Dizi : ${siralisayilar}`);
 	
 	
 	//3f çözümü
 	
-	/* kodlar buraya */
-
+	
 
 
 
