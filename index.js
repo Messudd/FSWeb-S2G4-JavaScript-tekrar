@@ -130,7 +130,7 @@ console.log(`Çemberin Alanı = ${CemberinAlani(15,pi)}`);
 	var besyuzdenkucuksayilar = sayilar.filter((sayi) => sayi < 500 );
 	console.log(`500 den kucuk sayilar : ${besyuzdenkucuksayilar}`);
 
-
+""	
 
 	//3e çözümü
 
@@ -141,14 +141,31 @@ console.log(`Çemberin Alanı = ${CemberinAlani(15,pi)}`);
 	
 	
 	//3f çözümü
-	
-	
 
 
+	tekraredensayilar = [];
+	const sayilarTekrar = new Object();
 
-	
+	for(let x in sayilar)
+	{
+		if(sayilarTekrar[sayilar[x]])
+		 {
+		 	sayilarTekrar[sayilar[x]]++;
+		 }
+	    else sayilarTekrar[sayilar[x]] = 1;
+	}
+	for (let key in sayilarTekrar)
+	{
+		(sayilarTekrar[key] > 1) ?
 		
+			tekraredensayilar.push(`${key} sayısı ${sayilarTekrar[key]} kere tekrar edilmiştir`):
+			0
+	}
+	console.log(`Tekrar edenler Listesi : ${tekraredensayilar}`);
 
+
+
+	
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 function sa(){
     console.log('Kodlar çalışıyor');
