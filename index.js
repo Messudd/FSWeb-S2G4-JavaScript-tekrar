@@ -154,6 +154,7 @@ console.log(`Çemberin Alanı = ${CemberinAlani(15,pi)}`);
 		 }
 	    else sayilarTekrar[sayilar[x]] = 1;
 	}
+	
 	for (let key in sayilarTekrar)
 	{
 		(sayilarTekrar[key] > 1) ?
